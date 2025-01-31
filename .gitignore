@@ -1,4 +1,19 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-venv/
-node_modules/
-__pycache__/
+# Directories
+## Hidden Directories
+.git/
+.venv/
+## Normal Directories
+etc/
+Include/
+Lib/
+share/
+bin/
+Scripts/
+## Sandbox Subdirectories
+Sandbox/__pycache__
+
+
+# Files
+Set-ExecutionPolicy
+pyvenv.cfg
+# 
