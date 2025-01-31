@@ -12,7 +12,6 @@ Scripts/
 ## Sandbox Subdirectories
 Sandbox/__pycache__
 
-
 # Files
 Set-ExecutionPolicy
 pyvenv.cfg
