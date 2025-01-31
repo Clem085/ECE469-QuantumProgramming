@@ -34,6 +34,25 @@ List all the requirements and tools needed before starting the installation proc
 <!-- - Python version (e.g., Python 3.8 or higher) -->
 <!-- - pip package manager -->
 <!-- - Internet connection -->
+---
+## Open Environment in Arch WSL
+### Open Command Line, Move to Correct Directory, and Enter Arch WSL
+```bash
+WSL
+cd /mnt/c/Users/consa/Downloads/Programming/Python/QuantumComputing/Sandbox
+```
+
+### Open Virutal Environment (VENV)
+```bash
+source /mnt/c/Users/consa/Downloads/Programming/Python/QuantumComputing/.venv/bin/activate
+```
+### Open VS Code from Terminal
+```bash
+code .
+```
+
+
+
 
 ---
 ## Installation Process
