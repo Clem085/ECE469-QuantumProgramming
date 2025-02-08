@@ -91,6 +91,18 @@ python3 -m pip install colorcet
 Source Link: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
 First, create a reomte github repo using github online GUI. 
 
+## Merge Local and Remote Repositories
+After Following all the instrucctions on this page to prepare your local repository and create your remote repository, it is mlikely there will be merge conflicts between the remote and local repos. Here is how I fixed it.
+```bash
+git pull --allow-unrelated-histories git@github.com:Clem085/ECE469-QuantumProgramming.git main
+
+git add .
+
+git commit -m "Integrated readme from remote with local directory. "
+
+git push git@github.com:Clem085/ECE469-QuantumProgramming.git main
+
+```
 
 
 ### Step 1: Update System and Install Dependencies
