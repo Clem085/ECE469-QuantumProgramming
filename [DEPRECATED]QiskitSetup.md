@@ -1,4 +1,7 @@
-# Setting Up Qiskit on WSL Arch Linux
+<!-- This entire document is deprecated and only left for archiving purposes. Please refer the README.md -->
+
+
+<!-- # Setting Up Qiskit on WSL Arch Linux
 
 This document outlines the steps and intricacies involved in setting up Qiskit on a WSL Arch Linux installation.
 
@@ -138,4 +141,4 @@ Summarize the key takeaways from the setup process. Mention how this documentati
 ---
 
 ## References
-List any links to online guides, forums, or documentation that helped you during the setup process.
+List any links to online guides, forums, or documentation that helped you during the setup process. -->

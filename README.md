@@ -39,7 +39,8 @@ List all the requirements and tools needed before starting the installation proc
 <!-- - pip package manager -->
 <!-- - Internet connection -->
 ---
-## Open Environment in Arch WSL
+<!-- The Instructions below have been deprecated, as there are for the Programming Directory. Swapped the Linux HomeDirectory due to performance issues. -->
+<!-- ## Open Environment in Arch WSL
 ### Open Command Line, Move to Correct Directory, and Enter Arch WSL
 ```bash
 WSL
@@ -49,6 +50,23 @@ cd /mnt/c/Users/consa/Downloads/Programming/Python/QuantumComputing/Sandbox
 ### Open Virutal Environment (VENV)
 ```bash
 source /mnt/c/Users/consa/Downloads/Programming/Python/QuantumComputing/.venv/bin/activate
+```
+### Open VS Code from Terminal
+```bash
+code .
+``` -->
+
+
+## Open Environment in Arch WSL
+### Open Command Line, Move to Correct Directory, and Enter Arch WSL
+```bash
+WSL
+cd ~/QuantumComputing/QuantumFiles
+```
+
+### Open Virutal Environment (VENV)
+```bash
+source ~/QuantumComputing/QuantumFiles/.venv/bin/activate
 ```
 ### Open VS Code from Terminal
 ```bash
