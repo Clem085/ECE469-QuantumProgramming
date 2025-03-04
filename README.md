@@ -61,12 +61,12 @@ code .
 ### Open Command Line, Move to Correct Directory, and Enter Arch WSL
 ```bash
 WSL
-cd ~/QuantumComputing/QuantumFiles
+cd ~/QuantumComputing/Qiskit
 ```
 
 ### Open Virutal Environment (VENV)
 ```bash
-source ~/QuantumComputing/QuantumFiles/.venv/bin/activate
+source ~/QuantumComputing/Qiskit/.venv/bin/activate
 ```
 ### Open VS Code from Terminal
 ```bash
