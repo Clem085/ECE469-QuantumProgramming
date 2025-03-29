@@ -79,3 +79,5 @@ def sv_disc_update(fig, sv):
         # update magnitude
         ax.patches[1].set_radius(np.abs(sv.data[i]))
     return
+
+
