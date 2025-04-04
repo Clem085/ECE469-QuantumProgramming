@@ -97,13 +97,15 @@ source .venv/bin/activate`
 ### PIP Library Installations
 Install the following python libraies by running each command ONE at a time. Please let each command complete before entering the next command.
 ```bash
-python3 -m pip install qiskit
-python3 -m pip install qiskit-aer
-python3 -m pip install matplotlib
-python3 -m pip install pylatexenc
-python3 -m pip install numpy
-python3 -m pip install colorcet
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install qiskit
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install qiskit-aer
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install qiskit-optimization
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install matplotlib
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install pylatexenc
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install numpy
+~/QuantumComputing/Qiskit/.venv/bin/python3 -m pip install colorcet
 ```
+Originally, I had code that suggested `bash python3 -m pip install package` would work, but I ran into issues when running it because the incorrect python installation was being called.
 
 ### Git Repository Setup
 Source Link: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
