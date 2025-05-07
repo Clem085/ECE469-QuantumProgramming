@@ -57,41 +57,35 @@ Make sure you have the following before starting:
 
 ## Installing WSL Arch Linux
 
-To install Arch Linux on WSL without using the Microsoft Store, follow these steps:
+As of 2025, you can now install Arch Linux directly through WSL using a single command. This is the easiest and most reliable method.
 
-### Step 1: Enable WSL and Virtual Machine Platform
+### Step 1: Enable WSL and Set Version 2 as Default
 
-Open Command Prompt as Administrator:
+Open PowerShell as administrator:
 
 ```powershell
-wsl --install --no-distribution
+wsl --install
 wsl --set-default-version 2
 ```
 
-Reboot Computer to allow changes to take effect.
+Reboot if prompted.
 
-### Step 2: Download Arch WSL Root Filesystem
+### Step 2: Install Arch Linux
 
-Download the Arch Linux WSL tarball:
-
-```bash
-curl -LO https://github.com/yuk7/ArchWSL/releases/download/20240311.0/Arch.tar.gz
-```
-
-### Step 3: Install Arch WSL Manually
-
-Create a folder for Arch and extract:
+Still in PowerShell:
 
 ```powershell
-mkdir C:\WSL\Arch
-cd C:\WSL\Arch
-wsl --import ArchLinux C:\WSL\Arch .\Arch.tar.gz --version 2
+wsl --install -d Arch
 ```
 
-### Step 4: Launch Arch WSL
+This command will download and install the official Arch Linux image configured for WSL.
+
+### Step 3: Launch Arch Linux
+
+Once installed, you can start Arch with:
 
 ```powershell
-wsl -d ArchLinux
+wsl -d Arch
 ```
 
 You’re now in your Arch shell.
