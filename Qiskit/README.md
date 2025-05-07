@@ -24,16 +24,18 @@ Qiskit is a Python library created by IBM, designed to simulate quantum computer
 ---
 
 ## Why this Configuration?
-There are many different reasons I chose each component of this configuration. In the subsections below, I do my best to summarize my reasoning. This is NOT the only way. This might not be the best way for most people. I love a challenge. I over complicate everything I do. This soltuion is not optimal, but it was the perfect solution for me. If you're currently questioning my sansity... you should. But hopefully this tutorial will give you all the tools and resources you need to accomplish a setup identical to mine. 
+There are many different reasons I chose each component of this configuration. In the subsections below, I do my best to summarize my reasoning. This is NOT the only way. This might not be the best way for most people. I love a challenge. I over complicate everything I do. I set up the programming environment for this course using three different methods. Of the three methods I tried, this one was the best fit for my needs. Hopefully this tutorial will give you all the tools and resources you need to accomplish a setup identical to mine. 
 
 ### Why Arch?
-I really wish I could find a more compelling reason than being able to say "I use Arch BTW." Arch is not for everyone. The most accessible WSL Install will be Ubuntu, where there is LOTS of documentation. When you choose Arch, you choose to face issues that other people won't. Arch is not hard, but the learning curve is steep. Things work differently on Arch. Thankfully, with the help of Arch Wiki, Chat GPT, and a little bit of technical knowledge, anyone can successfully set this up.
+I really wish I could find a more compelling reason than being able to say "I use Arch BTW." Arch is not for everyone. The most accessible WSL Install will be Ubuntu, where there is LOTS of documentation. When you choose Arch, you choose to face issues that other people won't. Arch is not hard, but the learning curve is steep. Things work differently on Arch. Thankfully, with the help of Arch Wiki, Chat GPT, and a little bit of technical knowledge, anyone can successfully set this up. I daily drive Garuda Linux, which is Arch based on one of my laptops. For me, it just makes most sense to use Arch. It is what I'm most comfroatable with, and this ensures the simplest compability between my devices. 
 
 ### Why WSL?
-Git. I use WSL because I prefer the use SSH Keys to access my remote github repositories. This is easiet to do in a lnux environemtn. WSL is slow. Running Linux via dual boot is way faster. Sometimes, it will take a while for some commands to be completed. Have patactice. Your computer isn't frozen, its just working really hard to complete the commands you requested. 
+Git. I use WSL because I prefer the use SSH Keys to access my remote github repositories. This is easiet to do in a lnux environemt. WSL can be slow. Running Linux via dual boot is way faster. Sometimes, it will take a while for some commands to be completed. Have patience. Your computer isn't frozen, its just working really hard to complete the commands you requested. This slow down is most notable when adding many new files or directories to a Git Repo. 
 
 ## Prerequisites
-List all the requirements and tools needed before starting the installation process. For example:
+List all the requirements and tools needed before starting the installation process. 
+
+For example:
 <!-- - WSL with Arch Linux installed -->
 <!-- - Python version (e.g., Python 3.8 or higher) -->
 <!-- - pip package manager -->
@@ -72,6 +74,8 @@ source ~/QuantumComputing/Qiskit/.venv/bin/activate
 ```bash
 code .
 ```
+
+### Optional: Create qiskit Keyword to pipline these commands
 
 
 
