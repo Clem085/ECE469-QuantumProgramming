@@ -104,6 +104,48 @@ You’re now in your Arch shell.
 
 ---
 
+
+### Step 5: Create a Non-Root User with Sudo Access
+
+By default, WSL launches Arch as the `root` user. This is not recommended for long-term use. Here’s how to create a proper non-root user, install `sudo`, and grant it necessary permissions:
+
+1. **Create a New User**  
+   Replace `yourname` with the username you'd like:
+   ```bash
+   useradd -m -G wheel -s /bin/bash yourname
+   passwd yourname
+   ```
+
+2. **Install `sudo`**  
+   As root:
+   ```bash
+   pacman -S sudo
+   ```
+
+3. **Enable `wheel` Group in sudoers File**  
+   To give the new user permission to use `sudo`, you must edit the `/etc/sudoers` file:
+   ```bash
+   EDITOR=nano visudo
+   ```
+   Once inside the file, press `Ctrl+W` to open the search prompt in nano. Then type `%wheel ALL=(ALL:ALL) ALL` and press `Enter` to jump directly to the line that looks like this:
+   ```bash
+   # %wheel ALL=(ALL:ALL) ALL
+   ```
+   Uncomment it by removing the `#` so it becomes:
+   ```bash
+   %wheel ALL=(ALL:ALL) ALL
+   ```
+   Press `Ctrl+O` to write the changes, `Enter` to confirm, and `Ctrl+X` to exit nano.
+
+4. **Set Your New User as the Default WSL User**  
+   Open **Command Prompt** (not WSL) and run:
+   ```cmd
+   Arch.exe config --default-user yourname
+   ```
+
+Now, each time you launch WSL, it will log in as your new non-root user.
+
+
 ## Python & Qiskit Installation Steps
 
 ### Step 1: Update System and Install Dependencies
