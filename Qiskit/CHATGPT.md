@@ -36,11 +36,12 @@ There are many different reasons I chose each component of this configuration. I
 
 ### Why Arch?
 
-Honestly, part of it is just to be able to say "I use Arch, BTW." Arch is not for everyone. The most accessible WSL install will be Ubuntu, which has extensive documentation. Choosing Arch means facing issues others won’t. Arch isn’t hard, but the learning curve is steep. Fortunately, with help from the Arch Wiki, ChatGPT, and some technical knowledge, anyone can succeed.
+Honestly, part of it is just to be able to say "I use Arch, BTW." If that isn't 
+Arch is not for everyone. The most accessible WSL install will be Ubuntu, which has extensive documentation. Choosing Arch means facing issues others won’t. Arch isn’t hard, but the learning curve is steep. Fortunately, with help from the Arch Wiki, ChatGPT, and some technical knowledge, anyone can succeed.
 
 ### Why WSL?
 
-Git. I use WSL because I prefer using SSH keys to access my remote GitHub repositories, which is easier in a Linux environment. WSL is slower than a native Linux installation—dual booting would be faster. Some commands take a while to run. Be patient. Your computer isn’t frozen; it’s just working hard.
+Git. I use WSL because I prefer using SSH keys to access my remote GitHub repositories, which is easier in a Linux environment. WSL is slower than a native Linux installation, and dual-booting Linux would be faster. Some commands take a while to run. Be patient. Your computer isn’t frozen; it’s just working hard. I chose WSL over dual-booting because swapping OSs every time I need to write some Python code takes too long-and I have to use Windows for many of my other courses.
 
 ---
 
@@ -49,7 +50,7 @@ Git. I use WSL because I prefer using SSH keys to access my remote GitHub reposi
 Make sure you have the following before starting:
 
 * A Windows 11 machine
-* Administrator access to install WSL
+* Administrator access
 * Basic terminal familiarity
 * Internet connection
 
@@ -57,34 +58,43 @@ Make sure you have the following before starting:
 
 ## Installing WSL Arch Linux
 
-As of 2025, you can now install Arch Linux directly through WSL using a single command. This is the easiest and most reliable method.
+As of 2025, you can install Arch Linux directly through WSL using a single command. This is the easiest and most reliable method.
 
-### Step 1: Enable WSL and Set Version 2 as Default
+### Step 1: Open Command Prompt as Administrator
 
-Open PowerShell as administrator:
+* Press the **Windows key**
+* Type **cmd**
+* Right-click **Command Prompt** and choose **Run as administrator**
 
-```powershell
+### Step 2: Enable WSL and Set Version 2 as Default
+
+In the Command Prompt window:
+
+```cmd
 wsl --install
+```
+
+```cmd
 wsl --set-default-version 2
 ```
 
-Reboot if prompted.
+**Important:** You must reboot your system after running these commands, even if you are not prompted.
 
-### Step 2: Install Arch Linux
+### Step 3: Install Arch Linux
 
-Still in PowerShell:
+After rebooting, open Command Prompt again (press Windows key → type `cmd` → Enter), then run:
 
-```powershell
+```cmd
 wsl --install -d Arch
 ```
 
 This command will download and install the official Arch Linux image configured for WSL.
 
-### Step 3: Launch Arch Linux
+### Step 4: Launch Arch Linux
 
-Once installed, you can start Arch with:
+Once installation is complete:
 
-```powershell
+```cmd
 wsl -d Arch
 ```
 
@@ -98,6 +108,9 @@ You’re now in your Arch shell.
 
 ```bash
 sudo pacman -Syu
+```
+
+```bash
 sudo pacman -S python python-pip
 ```
 
@@ -105,45 +118,18 @@ sudo pacman -S python python-pip
 
 ```bash
 python -m venv qiskit_env
+```
+
+```bash
 source qiskit_env/bin/activate
 ```
 
 ### Step 3: Install Qiskit and Tools
 
-Install the following Python libraries one at a time:
+Install all required Python libraries using a single command:
 
 ```bash
-pip install qiskit
-pip install qiskit-aer
-pip install qiskit-optimization
-pip install matplotlib
-pip install pylatexenc
-pip install numpy
-pip install colorcet
-```
-
-### Step 4: Verify Installation
-
-```bash
-python -c "import qiskit; print(qiskit.__qiskit_version__)"
-```
-
-### Step 5: Set Up GitHub Repository
-
-Create a GitHub repository, then link it locally:
-
-```bash
-git init
-git remote add origin git@github.com:your_username/your_repo.git
-git add .
-git commit -m "Initial commit"
-git push -u origin main
-```
-
-If there's a history conflict:
-
-```bash
-git pull --allow-unrelated-histories origin main
+pip install qiskit qiskit-aer qiskit-optimization matplotlib pylatexenc numpy colorcet
 ```
 
 ---
@@ -170,7 +156,7 @@ git pull --allow-unrelated-histories origin main
 
 ## Conclusion
 
-This guide provides a step-by-step approach to installing and using Qiskit on WSL Arch Linux using terminal commands. It should serve both as documentation for others and a reference for future setups.
+This guide provides a step-by-step approach to installing and using Qiskit on WSL Arch Linux using Command Prompt. It should serve both as documentation for others and a reference for future setups.
 
 ---
 
