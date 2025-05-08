@@ -36,12 +36,11 @@ There are many different reasons I chose each component of this configuration. I
 
 ### Why Arch?
 
-Honestly, part of it is just to be able to say "I use Arch, BTW." If that isn't 
-Arch is not for everyone. The most accessible WSL install will be Ubuntu, which has extensive documentation. Choosing Arch means facing issues others won’t. Arch isn’t hard, but the learning curve is steep. Fortunately, with help from the Arch Wiki, ChatGPT, and some technical knowledge, anyone can succeed.
+I use Garuda Linux, an Arch based distro as the primary OS on one of my laptops. Using the Arch flavor of WSL helps to ensure compantiblity between my devices. Another plus is being able to say "I use Arch, BTW." Arch is not for everyone. The most accessible WSL distrobution will be Ubuntu, which has extensive documentation. Choosing Arch means facing issues others won’t. Arch isn’t hard, but the learning curve is steep. Fortunately, with help from the Arch Wiki, ChatGPT, and some technical knowledge, anyone can succeed.
 
 ### Why WSL?
 
-Git. I use WSL because I prefer using SSH keys to access my remote GitHub repositories, which is easier in a Linux environment. WSL is slower than a native Linux installation, and dual-booting Linux would be faster. Some commands take a while to run. Be patient. Your computer isn’t frozen; it’s just working hard. I chose WSL over dual-booting because swapping OSs every time I need to write some Python code takes too long-and I have to use Windows for many of my other courses.
+Git. I use WSL because I prefer using SSH keys to access my remote GitHub repositories, which is easier in a Linux environment. WSL is slower than a native Linux installation, and dual-booting Linux would be faster. Some commands take a while to run. Be patient. Your computer isn’t frozen; it’s just working hard. I chose WSL over dual-booting because swapping OSs every time I need to write some Python code takes too long when I have to use Windows for many of my other courses.
 
 ---
 
@@ -49,7 +48,7 @@ Git. I use WSL because I prefer using SSH keys to access my remote GitHub reposi
 
 Make sure you have the following before starting:
 
-* A Windows 11 machine
+* A Windows 10/11 machine
 * Administrator access
 * Basic terminal familiarity
 * Internet connection
@@ -62,8 +61,8 @@ As of 2025, you can install Arch Linux directly through WSL using a single comma
 
 ### Step 1: Open Command Prompt as Administrator
 
-* Press the **Windows key**
-* Type **cmd**
+* Press the **Windows** key
+* Type `cmd`
 * Right-click **Command Prompt** and choose **Run as administrator**
 
 ### Step 2: Enable WSL and Set Version 2 as Default
@@ -82,8 +81,10 @@ wsl --set-default-version 2
 
 ### Step 3: Install Arch Linux
 
-After rebooting, open Command Prompt again (press Windows key → type `cmd` → Enter), then run:
-
+After rebooting, open Command Prompt again
+* Press the **Windows** key
+* Type `cmd`
+* Press the **Enter** key
 ```cmd
 wsl --install -d Arch
 ```
@@ -100,9 +101,23 @@ wsl -d Arch
 
 You’re now in your Arch shell.
 
+To make it easier to activate your Qiskit environment, add the following alias to your `~/.bashrc` file:
+
+```bash
+echo 'alias qiskit="cd ~/QuantumComputing/Qiskit && source ~/QuantumComputing/Qiskit/.venv/bin/activate"' >> ~/.bashrc
+```
+
+Then, reload your shell:
+
+```bash
+source ~/.bashrc
+```
+
+Now, you can simply run `qiskit` to jump into your environment.
+
 ---
 
-## Installation Steps
+## Python & Qiskit Installation Steps
 
 ### Step 1: Update System and Install Dependencies
 
