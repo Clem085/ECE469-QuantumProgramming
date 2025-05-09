@@ -131,17 +131,30 @@ sudo pacman -Syu
 sudo pacman -S python python-pip
 ```
 
-### Step 2: Set Up a Python Virtual Environment
+### Step 2: Create Required Project Directory Structure
+
+Before setting up the virtual environment, create the directory structure that will be used later:
 
 ```bash
-python -m venv qiskit_env
+mkdir -p ~/QuantumComputing/Qiskit
+cd ~/QuantumComputing/Qiskit
 ```
+
+### Step 3: Set Up a Python Virtual Environment
+
+Create the virtual environment inside the `Qiskit` directory:
 
 ```bash
-source qiskit_env/bin/activate
+python -m venv .venv
 ```
 
-### Step 3: Install Qiskit and Tools
+Then activate it:
+
+```bash
+source .venv/bin/activate
+```
+
+### Step 4: Install Qiskit and Tools
 
 Install all required Python libraries using a single command:
 
