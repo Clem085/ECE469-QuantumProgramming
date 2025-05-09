@@ -18,10 +18,11 @@ This document outlines the steps and intricacies involved in setting up Qiskit o
 4. [Installing WSL Arch Linux](#installing-wsl-arch-linux)
 5. [Python & Qiskit Installation Steps](#python--qiskit-installation-steps)
 6. [Activating WSL Python Environment](#activating-wsl-python-environment)
-7. [Troubleshooting](#troubleshooting)
-8. [Notes and Tips](#notes-and-tips)
-9. [Conclusion](#conclusion)
-10. [References](#references)
+7. [Booting from Scratch](#booting-from-scratch)
+8. [Troubleshooting](#troubleshooting)
+9. [Notes and Tips](#notes-and-tips)
+10. [Conclusion](#conclusion)
+11. [References](#references)
 
 ---
 
@@ -104,65 +105,21 @@ wsl -d Arch
 
 You’re now in your Arch shell.
 
+### Step 5: Make Arch the Default WSL Distro
+
+If you want `wsl` to always open your Arch Linux environment by default, run the following command in **Command Prompt** (not inside WSL):
+
+```cmd
+wsl --set-default Arch
+```
+
+This command tells Windows to use Arch as the default WSL distribution, so you can simply type `wsl` to open Arch in the future.
+
 ---
 
-### Step 5: Create a Non-Root User with Sudo Access
-
-By default, WSL launches Arch as the `root` user. This is not recommended for long-term use. Here’s how to create a proper non-root user, install `sudo`, and grant it necessary permissions:
-
-1. **Create a New User**
-   Replace `yourname` with the username you'd like:
-
-   ```bash
-   useradd -m -G wheel -s /bin/bash yourname
-   ```
-
-2. **Set a Password for the User**
-
-   ```bash
-   passwd yourname
-   ```
-
-   You will be prompted to enter a new password and then confirm it by typing it again. Note that for security, no characters (not even asterisks) will appear as you type—this is normal on Unix systems.
-
-3. **Install `sudo` and `nano`**
-   As root:
-
-   ```bash
-   pacman -S sudo nano
-   ```
-
-4. **Enable `wheel` Group in sudoers File**
-   To give the new user permission to use `sudo`, you must edit the `/etc/sudoers` file:
-
-   ```bash
-   EDITOR=nano visudo
-   ```
-
-   Once inside the file, press `Ctrl+W` to open the search prompt in nano. Then type `%wheel ALL=(ALL:ALL) NOPASSWD: ALL` and press `Enter` to jump directly to the line that looks like this:
-
-   ```bash
-   # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
-   ```
-
-   Uncomment it by removing the `#` so it becomes:
-
-   ```bash
-   %wheel ALL=(ALL:ALL) NOPASSWD: ALL
-   ```
-
-   Press `Ctrl+O` to write the changes, `Enter` to confirm, and `Ctrl+X` to exit nano.
-
-5. **Set Your New User as the Default WSL User**
-   Open **Command Prompt** (not WSL) and run:
-
-   ```cmd
-   Arch config --default-user yourname
-   ```
-
-   This sets your new user as the default for Arch, so future launches of WSL will start in that user's environment.
-
 ## Python & Qiskit Installation Steps
+
+> **Note:** Some of the following commands may prompt you with a yes/no question before continuing. Always type `Y` and press `Enter` to approve the installation when prompted.
 
 ### Step 1: Update System and Install Dependencies
 
@@ -209,6 +166,31 @@ source ~/.bashrc
 ```
 
 Now, you can simply run `qiskit` to jump into your environment.
+
+---
+
+## Booting from Scratch
+
+Once everything is configured, using your Qiskit development environment is easy.
+
+### To launch the setup:
+
+1. Press the **Windows** key and type `cmd` to open **Command Prompt**.
+2. Type:
+
+```cmd
+wsl
+```
+
+This will launch your default WSL distro (Arch Linux, if you followed the guide).
+
+3. Inside the Arch shell, simply type:
+
+```bash
+qiskit
+```
+
+This will change to your project directory and activate the Qiskit virtual environment, getting you ready to run code immediately.
 
 ---
 
