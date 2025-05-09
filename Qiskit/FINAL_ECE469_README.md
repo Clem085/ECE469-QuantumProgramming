@@ -137,6 +137,9 @@ Before setting up the virtual environment, create the directory structure that w
 
 ```bash
 mkdir -p ~/QuantumComputing/Qiskit
+```
+
+```bash
 cd ~/QuantumComputing/Qiskit
 ```
 
