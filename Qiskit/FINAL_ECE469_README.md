@@ -83,9 +83,11 @@ wsl --set-default-version 2
 ### Step 3: Install Arch Linux
 
 After rebooting, open Command Prompt again
+
 * Press the **Windows** key
 * Type `cmd`
 * Press the **Enter** key
+
 ```cmd
 wsl --install -d Arch
 ```
@@ -104,47 +106,61 @@ You’re now in your Arch shell.
 
 ---
 
-
 ### Step 5: Create a Non-Root User with Sudo Access
 
 By default, WSL launches Arch as the `root` user. This is not recommended for long-term use. Here’s how to create a proper non-root user, install `sudo`, and grant it necessary permissions:
 
-1. **Create a New User**  
+1. **Create a New User**
    Replace `yourname` with the username you'd like:
+
    ```bash
    useradd -m -G wheel -s /bin/bash yourname
+   ```
+
+2. **Set a Password for the User**
+
+   ```bash
    passwd yourname
    ```
 
-2. **Install `sudo`**  
+   You will be prompted to enter a new password and then confirm it by typing it again. Note that for security, no characters (not even asterisks) will appear as you type—this is normal on Unix systems.
+
+3. **Install `sudo` and `nano`**
    As root:
+
    ```bash
-   pacman -S sudo
+   pacman -S sudo nano
    ```
 
-3. **Enable `wheel` Group in sudoers File**  
+4. **Enable `wheel` Group in sudoers File**
    To give the new user permission to use `sudo`, you must edit the `/etc/sudoers` file:
+
    ```bash
    EDITOR=nano visudo
    ```
-   Once inside the file, press `Ctrl+W` to open the search prompt in nano. Then type `%wheel ALL=(ALL:ALL) ALL` and press `Enter` to jump directly to the line that looks like this:
+
+   Once inside the file, press `Ctrl+W` to open the search prompt in nano. Then type `%wheel ALL=(ALL:ALL) NOPASSWD: ALL` and press `Enter` to jump directly to the line that looks like this:
+
    ```bash
-   # %wheel ALL=(ALL:ALL) ALL
+   # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
    ```
+
    Uncomment it by removing the `#` so it becomes:
+
    ```bash
-   %wheel ALL=(ALL:ALL) ALL
+   %wheel ALL=(ALL:ALL) NOPASSWD: ALL
    ```
+
    Press `Ctrl+O` to write the changes, `Enter` to confirm, and `Ctrl+X` to exit nano.
 
-4. **Set Your New User as the Default WSL User**  
+5. **Set Your New User as the Default WSL User**
    Open **Command Prompt** (not WSL) and run:
+
    ```cmd
-   Arch.exe config --default-user yourname
+   Arch config --default-user yourname
    ```
 
-Now, each time you launch WSL, it will log in as your new non-root user.
-
+   This sets your new user as the default for Arch, so future launches of WSL will start in that user's environment.
 
 ## Python & Qiskit Installation Steps
 
@@ -177,7 +193,9 @@ pip install qiskit qiskit-aer qiskit-optimization matplotlib pylatexenc numpy co
 ```
 
 ---
+
 ## Activating WSL Python Environment
+
 To make it easier to activate your Qiskit environment, add the following alias to your `~/.bashrc` file:
 
 ```bash

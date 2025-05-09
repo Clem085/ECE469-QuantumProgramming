@@ -39,16 +39,16 @@ If successful, you should see a message welcoming you to GitHub.
 ## Set Up Local Repository
 ### Create Project Directory and Initialize Git
 ```bash
-mkdir -p ~/566_Tutorial2
-cd ~/566_Tutorial2
+mkdir -p ~/local_Dir
+cd ~/local_Dir
 
 git init
 ```
 
 ## Clone Remote Repository
 ```bash
-git clone git@github.com:your-username/your-repository.git ~/566_Tutorial2
-cd ~/566_Tutorial2
+git clone git@github.com:your-username/your-repository.git ~/local_Dir
+cd ~/local_Dir
 ```
 
 ---
